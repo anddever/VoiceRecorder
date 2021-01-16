@@ -27,5 +27,5 @@ interface RecordDatabaseDao {
     fun getAllRecords(): LiveData<MutableList<RecordingItem>>
 
     @Query("SELECT COUNT(*) FROM recording_table")
-    fun getCount(): LiveData<Int>
+    fun getCount(): Int
 }
