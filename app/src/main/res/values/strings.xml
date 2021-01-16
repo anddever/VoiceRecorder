@@ -2,4 +2,6 @@
     <string name="app_name">VoiceRecorder</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="record">Запись</string>
+    <string name="list">Список</string>
 </resources>
