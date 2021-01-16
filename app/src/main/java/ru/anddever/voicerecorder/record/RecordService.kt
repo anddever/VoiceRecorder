@@ -21,6 +21,8 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
+private const val CHANNEL_ID = "RecordService"
+
 class RecordService : Service() {
 
     private var mFileName: String? = null
@@ -36,8 +38,6 @@ class RecordService : Service() {
 
     private val mJob = Job()
     private val mUiScope = CoroutineScope(Dispatchers.Main + mJob)
-
-    private val CHANEL_ID = "RecordService"
 
     override fun onBind(intent: Intent?): IBinder? {
         return null
@@ -78,7 +78,7 @@ class RecordService : Service() {
 
     private fun createNotification(): Notification? {
         val mBuilder: NotificationCompat.Builder =
-            NotificationCompat.Builder(application, CHANEL_ID)
+            NotificationCompat.Builder(application, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_baseline_mic_white_36)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(getString(R.string.notification_recording))
