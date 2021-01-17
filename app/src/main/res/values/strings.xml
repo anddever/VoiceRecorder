@@ -19,4 +19,5 @@
     <string name="toast_recording_permissions">Без разрешения запись невозможна</string>
     <string name="notification_channel_id" translatable="false">RecordService</string>
     <string name="notification_channel_name" translatable="true">Recorder</string>
+    <string name="play_button">Play button</string>
 </resources>
