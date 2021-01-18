@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VoiceRecorder</string>
+    <string name="app_name">Voice Recorder</string>
 
     <string name="record">Запись</string>
     <string name="list">Список</string>

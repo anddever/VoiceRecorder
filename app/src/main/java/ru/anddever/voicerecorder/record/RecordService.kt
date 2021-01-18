@@ -21,13 +21,11 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val CHANNEL_ID = "RecordService"
-
 class RecordService : Service() {
 
     private var mFileName: String? = null
     private var mFilePath: String? = null
-    private var mCountRecords: Int? = null
+    //private var mCountRecords: Int? = null
 
     private var mRecorder: MediaRecorder? = null
 
@@ -49,10 +47,10 @@ class RecordService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        mCountRecords = intent?.extras!!["COUNT"] as Int?
+        //mCountRecords = intent?.extras!!["COUNT"] as Int?
 
         startRecording()
-        return START_STICKY
+        return START_NOT_STICKY
     }
 
     private fun startRecording() {
@@ -78,7 +76,7 @@ class RecordService : Service() {
 
     private fun createNotification(): Notification? {
         val mBuilder: NotificationCompat.Builder =
-            NotificationCompat.Builder(application, CHANNEL_ID)
+            NotificationCompat.Builder(application, getString(R.string.notification_channel_id))
                 .setSmallIcon(R.drawable.ic_baseline_mic_white_36)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(getString(R.string.notification_recording))
